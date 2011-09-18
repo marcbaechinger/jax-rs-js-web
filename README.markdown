@@ -1,4 +1,4 @@
-Integration tests
+JAX-RS-JS integration tests
 ==================================
 This is a maven web application with a web application containing basic integration tests for jax-rs-js
 
