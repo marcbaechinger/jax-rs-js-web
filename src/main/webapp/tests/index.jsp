@@ -45,14 +45,15 @@
                 asyncTest("POSTs JSON data as body returns created note with id", function() {
                     jaxjs.services.NotesService.addNote(
                     {
-                        title: "a<b>צהü</b>dd note 99",
+                        title: "a<b>הצü</b>dd note 99",
                         note: "a note added"
                     },
                     function(note) {
                         ok(note, "note not undefined");
                         ok(note.id, "id not undefined");
                         equal(note.id, 109);
-                        ok(note.title, "title not undefined");
+                        console.log("title", note.title);
+                        ok(note.title, "title undefined");
                         start();
                     });
                 });
@@ -70,6 +71,9 @@
                             equal(1, notes[0].id);
                             equal(2, notes[1].id);
                             equal(3, notes[2].id);
+                            ok(notes[0].title);
+                            ok(notes[1].title);
+                            ok(notes[2].title);
                             start();
                         }
                     ); 
